@@ -32,17 +32,25 @@ const canonical = canonicalUrl || Astro.url.href;
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
   <!-- Open Graph -->
   <meta property="og:title" content={siteTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonical} />
   <meta property="og:site_name" content="Teaching AI Ethics" />
+  <meta property="og:image" content="https://teachingaiethics.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={siteTitle} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://teachingaiethics.com/images/og-image.jpg" />
 
   <!-- Theme initialization (inline to prevent flash) -->
   <script is:inline>
