@@ -1,0 +1,511 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { caseStudies } from '../data/caseStudies';
+import { getPostBySlug } from '../data/posts';
+import { marked } from 'marked';
+
+const allTopics = [...new Set(caseStudies.map(cs => cs.topic))].sort();
+
+const topicLabels: Record<string, string> = {
+  'human-labour': 'Human Labour',
+  'data': 'Data',
+  'privacy': 'Privacy',
+  'copyright': 'Copyright',
+  'bias': 'Bias',
+  'truth': 'Truth',
+  'emotions': 'Emotions',
+  'power': 'Power',
+  'environment': 'Environment',
+  'data': 'Data',
+};
+
+const caseStudiesWithHtml = await Promise.all(
+  caseStudies.map(async cs => {
+    const post = getPostBySlug(cs.sourceArticle);
+    return {
+      ...cs,
+      contentHtml: await marked(cs.content),
+      articleTitle: post?.title ?? cs.sourceArticle,
+      articleHref: `/articles/${cs.sourceArticle}`,
+    };
+  })
+);
+---
+
+<BaseLayout
+  title="Case Studies"
+  description="Real-world case studies exploring AI ethics issues including privacy, bias, copyright, human labour, and more."
+>
+  <section class="case-studies-hero">
+    <div class="hero-bg-image" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title">Case Studies</h1>
+      <p class="hero-subtitle">Real-world examples of AI ethics issues — from labour exploitation and privacy disasters to copyright battles and algorithmic bias.</p>
+    </div>
+  </section>
+
+  <section class="case-studies-section">
+    <div class="container">
+      <div class="controls">
+        <div class="search-wrapper">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <label for="search-input" class="sr-only">Search case studies</label>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search case studies..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-label" id="topic-filter-label">Topic</h3>
+          <div class="pills" id="topic-pills" role="group" aria-labelledby="topic-filter-label">
+            <button class="pill active" data-topic="all" aria-pressed="true">All Topics</button>
+            {allTopics.map(topic => (
+              <button class="pill" data-topic={topic} aria-pressed="false">{topicLabels[topic] ?? topic}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <p class="results-count" id="results-count" aria-live="polite"></p>
+
+      <div class="cases-grid" id="cases-grid">
+        {caseStudiesWithHtml.map(cs => (
+          <div
+            class="case-card"
+            data-topic={cs.topic}
+            data-search={`${cs.title} ${cs.summary} ${topicLabels[cs.topic] ?? cs.topic}`.toLowerCase()}
+          >
+            <div class="case-card-accent"></div>
+            <div class="case-card-content">
+              <div class="case-meta">
+                <span class="case-topic">{topicLabels[cs.topic] ?? cs.topic}</span>
+              </div>
+              <h3 class="case-title">{cs.title}</h3>
+              <p class="case-summary">{cs.summary}</p>
+              <p class="case-source">
+                From: <a href={cs.articleHref}>{cs.articleTitle}</a>
+              </p>
+              <details class="case-details">
+                <summary class="case-read-more">Read more</summary>
+                <div class="case-content prose" set:html={cs.contentHtml} />
+              </details>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="no-results" id="no-results">No case studies match your filters. Try broadening your search.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const topicPills = document.getElementById('topic-pills')!;
+  const grid = document.getElementById('cases-grid')!;
+  const cards = Array.from(grid.querySelectorAll('.case-card')) as HTMLElement[];
+  const resultsCount = document.getElementById('results-count')!;
+  const noResults = document.getElementById('no-results')!;
+
+  let activeTopic = 'all';
+  let searchQuery = '';
+
+  function updatePills(container: HTMLElement, activeValue: string, dataAttr: string) {
+    container.querySelectorAll('.pill').forEach(pill => {
+      const val = (pill as HTMLElement).dataset[dataAttr];
+      const isActive = val === activeValue;
+      pill.classList.toggle('active', isActive);
+      pill.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  function filterCards() {
+    const query = searchQuery.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchTopic = activeTopic === 'all' || card.dataset.topic === activeTopic;
+      const matchSearch = !query || card.dataset.search!.includes(query);
+      const show = matchTopic && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    resultsCount.textContent = `Showing ${visible} of ${cards.length} case studies`;
+    noResults.style.display = visible === 0 ? '' : 'none';
+  }
+
+  topicPills.addEventListener('click', (e) => {
+    const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
+    if (!pill) return;
+    activeTopic = pill.dataset.topic!;
+    updatePills(topicPills, activeTopic, 'topic');
+    filterCards();
+  });
+
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value;
+    filterCards();
+  });
+
+  filterCards();
+</script>
+
+<style>
+  /* Hero with background image */
+  .case-studies-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.1s forwards;
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/case-studies-sparkles.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--content-width);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  /* Section */
+  .case-studies-section {
+    padding-bottom: var(--space-xl);
+  }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .search-wrapper {
+    position: relative;
+    max-width: 480px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .search-input:focus-visible {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .filter-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .pill {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 0.375rem 0.875rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .pill:hover {
+    border-color: var(--border-medium);
+    color: var(--text);
+  }
+
+  .pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--btn-text);
+  }
+
+  /* Results count */
+  .results-count {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Grid */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .cases-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Cards */
+  .case-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--ease-out) forwards;
+  }
+
+  .case-card-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+    position: relative;
+    z-index: 3;
+  }
+
+  .case-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    padding: 1px;
+    background: conic-gradient(
+      from 45deg,
+      var(--conic-bright) 0deg,
+      var(--conic-dim) 45deg,
+      var(--conic-bright) 90deg,
+      var(--conic-dim) 135deg,
+      var(--conic-bright) 180deg,
+      var(--conic-dim) 225deg,
+      var(--conic-bright) 270deg,
+      var(--conic-dim) 315deg,
+      var(--conic-bright) 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .case-card:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: var(--card-shadow);
+  }
+
+  .case-card-content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .case-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .case-topic {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    background: var(--tag-bg);
+    color: var(--accent-hover);
+    font-weight: 500;
+  }
+
+  .case-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--text);
+  }
+
+  .case-summary {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .case-source {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .case-source a {
+    color: var(--accent);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .case-source a:hover {
+    color: var(--accent-hover);
+  }
+
+  /* Expandable content */
+  .case-details {
+    margin-top: var(--space-xs);
+  }
+
+  .case-read-more {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+    transition: color var(--transition-fast);
+  }
+
+  .case-read-more::-webkit-details-marker {
+    display: none;
+  }
+
+  .case-read-more::before {
+    content: '+ ';
+  }
+
+  .case-details[open] .case-read-more::before {
+    content: '- ';
+  }
+
+  .case-read-more:hover {
+    color: var(--accent-hover);
+  }
+
+  .case-content {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--prose-text);
+  }
+
+  .case-content :global(p) {
+    margin-bottom: 1em;
+  }
+
+  .case-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .case-content :global(ol),
+  .case-content :global(ul) {
+    padding-left: 1.5rem;
+    margin-bottom: 1em;
+  }
+
+  .case-content :global(li) {
+    margin-bottom: 0.25em;
+  }
+
+  .case-content :global(strong) {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .case-content :global(em) {
+    font-style: italic;
+  }
+
+  /* No results */
+  .no-results {
+    display: none;
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--space-lg) 0;
+    font-size: 0.9375rem;
+  }
+</style>

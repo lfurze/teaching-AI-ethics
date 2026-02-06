@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { topics } from '../../data/topics';
+import { posts, getPostBySlug } from '../../data/posts';
+import { teachingIdeas } from '../../data/teachingIdeas';
+import { getCaseStudiesByTopic } from '../../data/caseStudies';
+
+export function getStaticPaths() {
+  return topics.map(topic => ({
+    params: { topic: topic.slug },
+    props: { topic },
+  }));
+}
+
+const { topic } = Astro.props;
+
+const topicArticles = topic.articleSlugs
+  .map(slug => getPostBySlug(slug))
+  .filter((p): p is NonNullable<typeof p> => p !== undefined);
+
+const firstArticle = topicArticles[0];
+const coverImage = firstArticle?.coverImage;
+const coverCredit = firstArticle?.coverCredit;
+
+const topicCaseStudies = getCaseStudiesByTopic(topic.slug);
+
+const topicTeachingIdeas = teachingIdeas.filter(
+  t => t.ethicsTopic.toLowerCase() === topic.name.toLowerCase()
+    || t.ethicsTopic.toLowerCase() === topic.slug.replace(/-/g, ' ')
+);
+
+const levelColors: Record<string, string> = {
+  beginner: 'var(--accent)',
+  intermediate: 'var(--accent-warm)',
+  advanced: '#f87171',
+};
+const levelColor = levelColors[topic.level] || 'var(--accent)';
+---
+
+<BaseLayout
+  title={topic.name}
+  description={topic.description}
+>
+  <div class="topic-page">
+    {coverImage && (
+      <div class="topic-cover">
+        <img src={coverImage} alt={`Cover image for ${topic.name}`} class="topic-cover-img" loading="eager" />
+        <div class="topic-cover-overlay"></div>
+      </div>
+    )}
+
+    <header class="topic-header container">
+      <div class="topic-meta">
+        <span class="topic-level-badge" style={`--level-color: ${levelColor}`}>{topic.level}</span>
+        <span class="topic-article-count">{topicArticles.length} {topicArticles.length === 1 ? 'article' : 'articles'}</span>
+      </div>
+      <h1>{topic.name}</h1>
+      <p class="topic-description">{topic.description}</p>
+      {coverCredit && (
+        <p class="topic-cover-credit">Image: {coverCredit}</p>
+      )}
+    </header>
+
+    <hr class="divider container" />
+
+    {topicArticles.length > 0 && (
+      <section class="topic-section stagger-in">
+        <div class="container">
+          <h2 class="section-heading">Articles</h2>
+          <div class="post-grid">
+            {topicArticles.map(post => (
+              <PostCard
+                slug={post.slug}
+                title={post.title}
+                date={post.date}
+                excerpt={post.excerpt}
+                categories={post.categories}
+                series={post.series}
+                coverImage={post.coverImage}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {topicCaseStudies.length > 0 && (
+      <section class="topic-section stagger-in">
+        <div class="container">
+          <h2 class="section-heading">Case Studies</h2>
+          <div class="case-study-grid">
+            {topicCaseStudies.map(cs => (
+              <div class="case-study-card">
+                <h3 class="case-study-title">{cs.title}</h3>
+                <p class="case-study-summary">{cs.summary}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {topicTeachingIdeas.length > 0 && (
+      <section class="topic-section stagger-in">
+        <div class="container">
+          <h2 class="section-heading">Teaching Ideas</h2>
+          <div class="teaching-ideas-grid">
+            {topicTeachingIdeas.map(idea => (
+              <div class="teaching-idea-card">
+                <span class="teaching-idea-subject">{idea.subject}</span>
+                <p class="teaching-idea-text">{idea.idea}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <div class="container topic-footer">
+      <a href="/topics/" class="back-link">&larr; All topics</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .topic-cover {
+    position: relative;
+    width: 100%;
+    max-height: 420px;
+    overflow: hidden;
+  }
+
+  .topic-cover-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.05s forwards;
+  }
+
+  .topic-cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      var(--bg) 100%
+    );
+    pointer-events: none;
+  }
+
+  .topic-header {
+    max-width: var(--content-width);
+    padding-top: var(--space-lg);
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.1s forwards;
+  }
+
+  .topic-cover + .topic-header {
+    padding-top: var(--space-sm);
+    margin-top: calc(-1 * var(--space-lg));
+    position: relative;
+    z-index: 1;
+  }
+
+  .topic-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .topic-level-badge {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    background: color-mix(in srgb, var(--level-color, var(--accent)) 15%, transparent);
+    color: var(--level-color, var(--accent));
+    font-weight: 600;
+  }
+
+  .topic-article-count {
+    color: var(--text-muted);
+  }
+
+  .topic-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--space-sm);
+    font-style: italic;
+  }
+
+  .topic-description {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+  }
+
+  .topic-cover-credit {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-sm);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  .topic-section {
+    padding-bottom: var(--space-lg);
+  }
+
+  .section-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--divider-accent);
+    display: inline-block;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Case Studies */
+  .case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .case-study-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .case-study-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: var(--space-md);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--ease-out) forwards;
+  }
+
+  .case-study-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    padding: 1px;
+    background: conic-gradient(
+      from 45deg,
+      var(--conic-bright) 0deg,
+      var(--conic-dim) 45deg,
+      var(--conic-bright) 90deg,
+      var(--conic-dim) 135deg,
+      var(--conic-bright) 180deg,
+      var(--conic-dim) 225deg,
+      var(--conic-bright) 270deg,
+      var(--conic-dim) 315deg,
+      var(--conic-bright) 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .case-study-title {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    margin-bottom: var(--space-xs);
+    color: var(--text);
+  }
+
+  .case-study-summary {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Teaching Ideas */
+  .teaching-ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .teaching-ideas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .teaching-idea-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: var(--space-md);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--ease-out) forwards;
+  }
+
+  .teaching-idea-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    padding: 1px;
+    background: conic-gradient(
+      from 45deg,
+      var(--conic-bright) 0deg,
+      var(--conic-dim) 45deg,
+      var(--conic-bright) 90deg,
+      var(--conic-dim) 135deg,
+      var(--conic-bright) 180deg,
+      var(--conic-dim) 225deg,
+      var(--conic-bright) 270deg,
+      var(--conic-dim) 315deg,
+      var(--conic-bright) 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .teaching-idea-subject {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    background: var(--tag-bg);
+    color: var(--accent-hover);
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .teaching-idea-text {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .topic-footer {
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-lg);
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--accent);
+  }
+</style>

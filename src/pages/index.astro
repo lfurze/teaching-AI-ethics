@@ -1,0 +1,394 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { posts } from '../data/posts';
+
+const latestPosts = posts.slice(0, 6);
+---
+
+<BaseLayout title="Home">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg-image" aria-hidden="true"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Ethics in Education</p>
+      <h1 class="hero-title">Teaching AI Ethics</h1>
+      <p class="hero-subtitle">
+        Exploring the ethical dimensions of artificial intelligence in education — from bias and privacy to labour rights and environmental impact.
+      </p>
+      <div class="hero-actions">
+        <a href="/articles" class="btn btn-primary">Read the series</a>
+        <a href="/contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <p class="hero-credit">Image: Yutong Liu / betterimagesofai.org / CC-BY 4.0</p>
+  </section>
+
+  <hr class="divider container" />
+
+  <!-- About summary -->
+  <section class="about-section stagger-in">
+    <div class="container about-inner">
+      <h2>About the Series</h2>
+      <p>
+        The <em>Teaching AI Ethics</em> series presents nine key areas of ethical concern in artificial intelligence, providing practical ways to discuss these issues across a variety of subject areas. Originally published in 2023, the series is being updated for 2025–26 with new research, case studies, and teaching resources.
+      </p>
+      <p>
+        Each article examines a different ethical dimension — bias, environment, truth, copyright, privacy, data, emotions, human labour, and power — and connects it to existing curricula in subjects from English and History to Computer Science and Visual Arts.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider container" />
+
+  <!-- eBook banner -->
+  <section class="ebook-section stagger-in">
+    <div class="container ebook-inner">
+      <div class="ebook-cover-wrapper">
+        <img
+          src="/images/taie-cover.png"
+          alt="Teaching AI Ethics: A Guide for Educators book cover"
+          class="ebook-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="ebook-text">
+        <p class="ebook-eyebrow">Open Access eBook</p>
+        <h2 class="ebook-title">Teaching AI Ethics: A Guide for Educators</h2>
+        <p class="ebook-author">By Leon Furze</p>
+        <p class="ebook-desc">
+          A comprehensive guide to teaching the ethical dimensions of artificial intelligence across the curriculum. Free to download and share.
+        </p>
+        <a href="https://subscribe.leonfurze.com/teaching-ai-ethics" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download the eBook</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider container" />
+
+  <!-- Latest articles -->
+  <section class="latest-section stagger-in">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Articles</h2>
+        <a href="/articles" class="view-all">View all &rarr;</a>
+      </div>
+      <div class="post-grid">
+        {latestPosts.map(post => (
+          <PostCard
+            slug={post.slug}
+            title={post.title}
+            date={post.date}
+            excerpt={post.excerpt}
+            categories={post.categories}
+            series={post.series}
+            coverImage={post.coverImage}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/hero-joining-the-table.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: -50%;
+    background: linear-gradient(
+      135deg,
+      rgba(45, 212, 168, 0.08) 0%,
+      rgba(10, 15, 15, 0) 25%,
+      rgba(245, 158, 11, 0.06) 50%,
+      rgba(10, 15, 15, 0) 75%,
+      rgba(45, 212, 168, 0.08) 100%
+    );
+    background-size: 400% 400%;
+    animation: heroGradient 20s ease infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Floating geometric accents */
+  .hero-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(45, 212, 168, 0.06) 0%, transparent 70%);
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    left: 10%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+    animation-delay: -4s;
+    animation-duration: 16s;
+  }
+
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    right: 20%;
+    border: 1px solid rgba(45, 212, 168, 0.08);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: float 18s ease-in-out infinite;
+    animation-delay: -8s;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.1s forwards;
+  }
+
+  .hero-title {
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.2s forwards;
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.0625rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.35s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.7s var(--ease-out) 0.5s forwards;
+  }
+
+  .hero-credit {
+    position: absolute;
+    bottom: var(--space-sm);
+    right: var(--space-md);
+    font-size: 0.625rem;
+    color: var(--hero-credit-color);
+    margin: 0;
+    z-index: 1;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--btn-text);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    color: var(--btn-text);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(45, 212, 168, 0.25);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-medium);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* About */
+  .about-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .about-inner {
+    max-width: var(--content-width);
+  }
+
+  .about-inner h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .about-inner p {
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  /* Latest */
+  .latest-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-md);
+  }
+
+  .view-all {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .view-all:hover {
+    color: var(--accent);
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* eBook banner */
+  .ebook-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .ebook-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    max-width: 900px;
+  }
+
+  .ebook-cover-wrapper {
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .ebook-cover {
+    width: 220px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow:
+      8px 12px 32px rgba(0, 0, 0, 0.4),
+      2px 4px 12px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg);
+    transition: transform var(--transition);
+  }
+
+  .ebook-inner:hover .ebook-cover {
+    transform: rotate(-1deg) scale(1.03);
+  }
+
+  .ebook-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-warm);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ebook-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ebook-author {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ebook-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .ebook-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-md);
+    }
+
+    .ebook-cover {
+      width: 180px;
+      transform: rotate(-2deg);
+    }
+  }
+</style>

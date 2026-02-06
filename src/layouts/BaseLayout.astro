@@ -1,0 +1,72 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = 'Teaching AI Ethics — Exploring the ethics of artificial intelligence in education.',
+  ogType = 'website',
+  canonicalUrl,
+} = Astro.props;
+
+const siteTitle = title === 'Home' ? 'Teaching AI Ethics' : `${title} | Teaching AI Ethics`;
+const canonical = canonicalUrl || Astro.url.href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content={Astro.generator} />
+
+  <title>{siteTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Teaching AI Ethics" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={siteTitle} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Theme initialization (inline to prevent flash) -->
+  <script is:inline>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      if (stored) {
+        document.documentElement.setAttribute('data-theme', stored);
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

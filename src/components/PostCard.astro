@@ -1,0 +1,211 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  categories: string[];
+  series: string;
+  coverImage?: string;
+}
+
+const { slug, title, date, excerpt, categories, series, coverImage } = Astro.props;
+
+const displayDate = new Date(date).toLocaleDateString('en-AU', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const seriesLabel = series === '2023' ? 'Original Series' : `${series} Update`;
+---
+
+<a href={`/articles/${slug}`} class="card">
+  {coverImage && (
+    <div class="card-image">
+      <img src={coverImage} alt={`Cover image for ${title}`} loading="lazy" />
+    </div>
+  )}
+  {!coverImage && <div class="card-accent"></div>}
+  <div class="card-content">
+    <div class="card-meta">
+      <span class="card-series">{seriesLabel}</span>
+      <time datetime={date}>{displayDate}</time>
+    </div>
+    <h3 class="card-title">{title}</h3>
+    <p class="card-excerpt">{excerpt}</p>
+    <div class="card-tags">
+      {categories.map(cat => (
+        <span class="tag">{cat}</span>
+      ))}
+    </div>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: block;
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    color: var(--text);
+    height: 100%;
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--ease-out) forwards;
+  }
+
+  /* Staggered entrance */
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.12s; }
+  .card:nth-child(3) { animation-delay: 0.19s; }
+  .card:nth-child(4) { animation-delay: 0.26s; }
+  .card:nth-child(5) { animation-delay: 0.33s; }
+  .card:nth-child(6) { animation-delay: 0.4s; }
+  .card:nth-child(7) { animation-delay: 0.47s; }
+  .card:nth-child(8) { animation-delay: 0.54s; }
+  .card:nth-child(9) { animation-delay: 0.61s; }
+
+  /* Card cover image */
+  .card-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--card-gradient-fade));
+    pointer-events: none;
+  }
+
+  /* Accent stripe at top */
+  .card-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+    position: relative;
+    z-index: 3;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    padding: 1px;
+    background: conic-gradient(
+      from 45deg,
+      var(--conic-bright) 0deg,
+      var(--conic-dim) 45deg,
+      var(--conic-bright) 90deg,
+      var(--conic-dim) 135deg,
+      var(--conic-bright) 180deg,
+      var(--conic-dim) 225deg,
+      var(--conic-bright) 270deg,
+      var(--conic-dim) 315deg,
+      var(--conic-bright) 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .card:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    height: 100%;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .card-series {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .card-series::after {
+    content: '\00b7';
+    margin-left: var(--space-xs);
+    color: var(--text-muted);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-top: 0.25rem;
+    transition: color var(--transition-fast);
+  }
+
+  .card:hover .card-title {
+    color: var(--accent-hover);
+  }
+
+  .card-excerpt {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: auto;
+    padding-top: var(--space-xs);
+  }
+
+  .tag {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    background: var(--tag-bg);
+    color: var(--accent-hover);
+    font-weight: 500;
+  }
+</style>

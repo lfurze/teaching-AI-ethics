@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import PostCard from '../components/PostCard.astro';
+import { posts } from '../data/posts';
+
+const seriesGroups = [
+  { label: '2025\u201326 Updates', posts: posts.filter(p => p.series === '2025' || p.series === '2026') },
+  { label: '2023 Original Series', posts: posts.filter(p => p.series === '2023') },
+];
+---
+
+<BaseLayout
+  title="Articles"
+  description="The Teaching AI Ethics series — exploring bias, privacy, environment, copyright, human labour, and more."
+>
+  <Hero
+    title="Articles"
+    subtitle="The Teaching AI Ethics series explores nine areas of ethical concern in artificial intelligence, with practical teaching resources for educators."
+  />
+
+  {seriesGroups.map(group => (
+    <section class="series-section stagger-in">
+      <div class="container">
+        <h2 class="series-heading">{group.label}</h2>
+        <div class="post-grid">
+          {group.posts.map(post => (
+            <PostCard
+              slug={post.slug}
+              title={post.title}
+              date={post.date}
+              excerpt={post.excerpt}
+              categories={post.categories}
+              series={post.series}
+              coverImage={post.coverImage}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .series-section {
+    padding-bottom: var(--space-lg);
+  }
+
+  .series-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--divider-accent);
+    display: inline-block;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

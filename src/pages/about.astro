@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="About the Teaching AI Ethics series and its author Leon Furze — exploring the ethical dimensions of AI in education."
+>
+  <Hero
+    title="About"
+    subtitle="The story behind the Teaching AI Ethics series and the educator who created it."
+  />
+
+  <section class="about-content stagger-in">
+    <div class="container about-inner">
+      <h2>The Series</h2>
+      <p>
+        The <em>Teaching AI Ethics</em> series was created to give educators practical, accessible ways to discuss the ethical dimensions of artificial intelligence across a wide range of subject areas. Rather than treating AI ethics as a topic for computer science classes alone, the series connects ethical questions to subjects students already study — from English and History to Visual Arts and Science.
+      </p>
+      <p>
+        Originally published in 2023, the series covers nine key areas of ethical concern:
+      </p>
+      <ul class="topics-list">
+        <li><strong>Bias</strong> — How AI systems can reflect and amplify existing societal biases</li>
+        <li><strong>Environment</strong> — The environmental costs of training and running AI models</li>
+        <li><strong>Truth</strong> — Misinformation, deepfakes, and the challenge of distinguishing real from generated</li>
+        <li><strong>Copyright</strong> — Questions of ownership, authorship, and creative rights in the age of generative AI</li>
+        <li><strong>Privacy</strong> — How AI systems collect, store, and use personal data</li>
+        <li><strong>Data</strong> — The reduction of human experience to data points, and the scale of data collection in the GenAI era</li>
+        <li><strong>Emotions</strong> — From affect recognition to social chatbots that manipulate human emotions</li>
+        <li><strong>Human Labour</strong> — The hidden human work behind AI systems and the impact on employment</li>
+        <li><strong>Power</strong> — Who controls AI development and deployment, and who benefits</li>
+      </ul>
+      <p>
+        In 2025&ndash;26, the series is being updated with new research, contemporary case studies, and additional teaching resources to reflect the rapid developments in AI since the original publication.
+      </p>
+
+      <hr class="divider" />
+
+      <h2>About Leon Furze</h2>
+      <p>
+        Leon Furze is an international consultant, author, and speaker with over fifteen years of experience in secondary and tertiary education and leadership. He is currently completing a PhD researching the implications of Generative Artificial Intelligence on writing instruction and education.
+      </p>
+      <p>
+        Throughout his career, Leon has held leadership positions including Director of Teaching and Learning, Head of English, and eLearning coordinator. He has also served as a Non-Executive Director for Young Change Agents and Reframing Autism, and held Council membership with the Victorian Association for the Teaching of English.
+      </p>
+      <p>
+        Leon holds a Master of Education from the University of Melbourne and is an Associate Member of the Future Skills Organisation. His published works include <em>Practical AI Strategies</em>, <em>Practical Reading Strategies</em>, and <em>Practical Writing Strategies</em>, which have reached international audiences.
+      </p>
+      <p>
+        He delivers professional learning through consulting, speaking engagements, and training for schools, individuals, and businesses — helping educators understand and navigate generative AI's implications across K&ndash;12 and tertiary contexts.
+      </p>
+      <p>
+        Learn more at <a href="https://leonfurze.com" target="_blank" rel="noopener">leonfurze.com</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content {
+    padding-bottom: var(--space-xl);
+  }
+
+  .about-inner {
+    max-width: var(--content-width);
+  }
+
+  .about-inner h2 {
+    margin-bottom: var(--space-sm);
+    font-style: italic;
+  }
+
+  .about-inner p {
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  .topics-list {
+    padding-left: 1.5em;
+    margin-bottom: 1.25em;
+  }
+
+  .topics-list li {
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 0.5em;
+  }
+
+  .topics-list li strong {
+    color: var(--accent-hover);
+  }
+
+  .about-inner a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--accent-glow);
+    transition: text-decoration-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .about-inner a:hover {
+    text-decoration-color: var(--accent);
+    color: var(--accent-hover);
+  }
+</style>
