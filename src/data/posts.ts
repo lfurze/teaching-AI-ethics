@@ -21,7 +21,7 @@ export const posts: Post[] = [
     tags: ['AI ethics', 'emotions', 'social chatbots', 'mental health', 'manipulation'],
     series: '2026',
     coverImage: '/images/emotions-quantified-human.webp',
-    coverCredit: 'Alan Warburton / betterimagesofai.org / BBC / CC-BY 4.0',
+    coverCredit: 'Alan Warburton / © BBC / Better Images of AI / Quantified Human / CC-BY 4.0',
     content: `
 This post is an update to the 2023 article "Teaching AI Ethics: Affect Recognition." In that original post, I discussed the emerging technologies of emotion recognition, which aimed to identify and interpret human emotions through facial expressions, body language, and speech patterns. That technology remains problematic, but a more pressing concern has replaced it for this updated article: the deliberate design of AI systems to manipulate human emotions.
 
@@ -190,7 +190,7 @@ In **English**, students analyse persuasive language, characterisation, and the 
     tags: ['AI', 'human labour'],
     series: '2026',
     coverImage: '/images/human-labour-knowledge-sweatshop.webp',
-    coverCredit: 'Leo Lau & Digit / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Leo Lau & Digit / Better Images of AI / Knowledge Sweatshop / CC-BY 4.0',
     content: `
 ## The Hidden Workforce
 
@@ -283,7 +283,7 @@ The human cost of AI is now part of public discourse. Worker organising has tran
     tags: ['AI', 'AI ethics', 'data'],
     series: '2025',
     coverImage: '/images/data-glitch-binary.webp',
-    coverCredit: 'Elise Racine & The Bigger Picture / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Elise Racine & The Bigger Picture / Better Images of AI / Glitch Binary Abyss II / CC-BY 4.0',
     content: `
 ## Understanding the Scale of Data Collection
 
@@ -339,7 +339,7 @@ Machine learning models are less accurate at predicting success for racial and c
     tags: ['AI', 'AI ethics'],
     series: '2025',
     coverImage: '/images/privacy-surveillance.webp',
-    coverCredit: 'Reihaneh Golpayegani & Digit / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Reihaneh Golpayegani & Digit / Better Images of AI / Surveillance / CC-BY 4.0',
     content: `
 ## The Illusion of Privacy
 
@@ -409,7 +409,7 @@ This case demonstrates key principles: companies must clearly explain how they c
     tags: ['AI ethics'],
     series: '2025',
     coverImage: '/images/copyright-horizon.webp',
-    coverCredit: 'Wesley Goatley & BRAID / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Wesley Goatley & BRAID / Better Images of AI / The Horizon / CC-BY 4.0',
     content: `
 ## The Legal Landscape Has Shifted… Sort Of
 
@@ -483,7 +483,7 @@ We've had our major test case. We still don't know if training AI on copyrighted
     tags: ['AI', 'education'],
     series: '2025',
     coverImage: '/images/bias-binarisation.webp',
-    coverCredit: 'Beckett LeClair / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Beckett LeClair / Better Images of AI / Binarisation / CC-BY 4.0',
     content: `
 ## Synopsis
 
@@ -514,7 +514,7 @@ This first instalment in the *Teaching AI Ethics 2025* series revisits the theme
     tags: ['AI', 'education'],
     series: '2025',
     coverImage: '/images/intro-brain-control.webp',
-    coverCredit: 'Bart Fish & Power Tools of AI / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Bart Fish & Power Tools of AI / Better Images of AI / Behaviour Power / CC-BY 4.0',
     content: `
 ## Synopsis
 
@@ -550,7 +550,7 @@ The 2025 series revisits each of these themes with updated research, new case st
     tags: ['AI', 'artificial intelligence', 'education', 'teaching AI ethics'],
     series: '2025',
     coverImage: '/images/truth-telling-tales.webp',
-    coverCredit: 'Reihaneh Golpayegani / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Reihaneh Golpayegani / Better Images of AI / Telling Tales / CC-BY 4.0',
     content: `
 ## What Does Truth Mean to a Large Language Model?
 
@@ -623,7 +623,7 @@ Sarah Elaine Eaton's post-plagiarism framework has six tenets:
     tags: ['AI', 'artificial intelligence', 'education', 'environment', 'teaching AI ethics'],
     series: '2025',
     coverImage: '/images/environment-data-centers.webp',
-    coverCredit: 'Gloria Mendoza / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Gloria Mendoza / Better Images of AI / The Environmental Impact of Data Centres in Vulnerable Ecosystems / CC-BY 4.0',
     content: `
 ## Artificial Intelligence Is an Extractive Technology
 
@@ -681,7 +681,7 @@ We need to ask: Do we need better image generation models for lesson resources, 
     tags: ['AI ethics', 'hegemony', 'power', 'bias'],
     series: '2023',
     coverImage: '/images/power-behaviour-power.webp',
-    coverCredit: 'Bart Fish & Power Tools of AI / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Bart Fish & Power Tools of AI / Better Images of AI / Behaviour Power / CC-BY 4.0',
     content: `
 ## Understanding Hegemony
 
@@ -743,7 +743,7 @@ Here are five practical ideas for Teaching AI Ethics:
     tags: ['AI ethics', 'human labour', 'ghost work', 'exploitation'],
     series: '2023',
     coverImage: '/images/human-labour-knowledge-sweatshop.webp',
-    coverCredit: 'Leo Lau & Digit / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Leo Lau & Digit / Better Images of AI / Knowledge Sweatshop / CC-BY 4.0',
     content: `
 When people think of Artificial Intelligence, the image that often springs to mind is that of sentient machines or shiny metallic robots, a depiction heavily influenced by popular culture. This narrative, along with language around "magical" or "mythical" AI, tends to overshadow actual pressing ethical issues associated with AI development and usage. This post explores the exploitation of human labour in AI development, including low-paid workers used for categorising and labelling data, and the impact of the AI infrastructure on human workers.
 
@@ -794,8 +794,8 @@ These "advanced level" AI Ethics activities use Project Zero thinking routines t
     categories: ['AI', 'Ethics'],
     tags: ['AI ethics', 'affect recognition', 'emotion recognition', 'facial recognition', 'surveillance'],
     series: '2023',
-    coverImage: '/images/affect-recognition-surveillance.webp',
-    coverCredit: 'Reihaneh Golpayegani & DIGIT / betterimagesofai.org / CC-BY 4.0',
+    coverImage: '/images/affect-recognition-mirror-d.webp',
+    coverCredit: 'Comuzi / © BBC / Better Images of AI / Mirror D / CC-BY 4.0',
     content: `
 As artificial intelligence continues to develop and influence different aspects of our lives, its role in education is becoming increasingly important. One particularly controversial implementation of AI is affect or emotion recognition, which claims to interpret human emotions and mental states by analysing facial expressions, body language, and speech patterns. Advocates for affect recognition argue that incorporating it into education can transform how students learn, enabling personalised and adaptive teaching methods. However, the reliability and ethical implications of this technology make it well worth further investigation.
 
@@ -856,7 +856,7 @@ Divide students into small groups. Their task is to create a system that address
     tags: ['AI ethics', 'datafication', 'data bias', 'privacy'],
     series: '2023',
     coverImage: '/images/data-glitch-binary.webp',
-    coverCredit: 'Elise Racine & The Bigger Picture / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Elise Racine & The Bigger Picture / Better Images of AI / Glitch Binary Abyss II / CC-BY 4.0',
     content: `
 "Datafication" is a term used to describe how all aspects of our lives are being turned into datapoints. Whether through the collection of our likes, shares, and ratings on social media and streaming apps, or through the harvesting of physical data from devices like smartphones and smartwatches, datafication is what powers artificial intelligence.
 
@@ -895,7 +895,7 @@ Companies gather large amounts of information for various reasons, and AI plays 
     tags: ['AI ethics', 'truth', 'academic integrity', 'misinformation', 'disinformation'],
     series: '2023',
     coverImage: '/images/truth-telling-tales.webp',
-    coverCredit: 'Reihaneh Golpayegani / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Reihaneh Golpayegani / Better Images of AI / Telling Tales / CC-BY 4.0',
     content: `
 The concept of "truth" is a significant ethical issue related to AI systems like ChatGPT. Since its launch, there have been two main concerns: first, the likelihood of AI models generating false or fabricated content, and second, the potential for individuals to exploit them for dishonest purposes.
 
@@ -945,7 +945,7 @@ LLMs can overflow the internet with false information at minimal cost, making ma
     tags: ['AI ethics', 'environment', 'climate change', 'data centres', 'energy'],
     series: '2023',
     coverImage: '/images/environment-data-centers.webp',
-    coverCredit: 'Gloria Mendoza / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Gloria Mendoza / Better Images of AI / The Environmental Impact of Data Centres in Vulnerable Ecosystems / CC-BY 4.0',
     content: `
 Kate Crawford, researcher, author, and leading AI scholar, refers to Artificial Intelligence as an "extractive" technology. In her book *Atlas of AI* she compares the AI industry to mining, drawing comparisons between oil and precious metal extraction.
 
@@ -994,7 +994,7 @@ Organisations like Microsoft, OpenAI, and Google are investigating ways to reduc
     tags: ['AI ethics', 'algorithmic bias', 'discrimination', 'predictive policing', 'facial recognition'],
     series: '2023',
     coverImage: '/images/bias-binarisation.webp',
-    coverCredit: 'Beckett LeClair / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Beckett LeClair / Better Images of AI / Binarisation / CC-BY 4.0',
     content: `
 While AI can undoubtedly be a valuable tool in education, it is important for educators to understand the ethical concerns that surround its use. We must ensure that we are using these technologies in ways that are responsible, just, and fair.
 
@@ -1054,7 +1054,7 @@ Facial recognition technology poses special risks of disparate impact for histor
     tags: ['AI ethics', 'privacy', 'GDPR', 'personal data', 'defamation'],
     series: '2023',
     coverImage: '/images/privacy-surveillance.webp',
-    coverCredit: 'Reihaneh Golpayegani & Digit / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Reihaneh Golpayegani & Digit / Better Images of AI / Surveillance / CC-BY 4.0',
     content: `
 There are growing concerns about the impact of Artificial Intelligence technologies on our privacy. AI systems are often "black boxes", making it hard to understand how they arrive at their decisions and raising questions about transparency.
 
@@ -1105,7 +1105,7 @@ This case highlights the legal challenges associated with suing AI companies for
     tags: ['AI ethics', 'copyright', 'intellectual property', 'image generation'],
     series: '2023',
     coverImage: '/images/copyright-horizon.webp',
-    coverCredit: 'Wesley Goatley & BRAID / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Wesley Goatley & BRAID / Better Images of AI / The Horizon / CC-BY 4.0',
     content: `
 Copyright is a hugely contentious aspect of the current wave of Artificial Intelligence, particularly in the field of AI image generation. As AI continues to advance and both artists and laypeople produce creative works, questions are cropping up about who owns the copyright to those works.
 
@@ -1158,7 +1158,7 @@ The decision means that AI-generated imagery, without human-authored elements, c
     tags: ['AI', 'AI ethics', 'education', 'ChatGPT', 'ethics', 'bias', 'environment', 'copyright', 'privacy', 'human labour', 'power'],
     series: '2023',
     coverImage: '/images/overview-two-cultures.webp',
-    coverCredit: 'Zoya Yasmine & Cambridge Diversity Fund / betterimagesofai.org / CC-BY 4.0',
+    coverCredit: 'Zoya Yasmine & Cambridge Diversity Fund / Better Images of AI / The Two Cultures / CC-BY 4.0',
     content: `
 As we head into the start of Term 1 it is already looking like Artificial Intelligence is going to be one of the most talked about issues in the classroom. Much of the narrative around models like OpenAI's ChatGPT has centred on students using it to cheat on assignments. But many schools are much more interested in the potential of these technologies to help, rather than hinder in education.
 

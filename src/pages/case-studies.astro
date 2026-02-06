@@ -43,6 +43,7 @@ const caseStudiesWithHtml = await Promise.all(
       <h1 class="hero-title">Case Studies</h1>
       <p class="hero-subtitle">Real-world examples of AI ethics issues — from labour exploitation and privacy disasters to copyright battles and algorithmic bias.</p>
     </div>
+    <p class="hero-credit">Image: Beckett LeClair / Better Images of AI / Sparkles / CC-BY 4.0</p>
   </section>
 
   <section class="case-studies-section">
@@ -190,6 +191,16 @@ const caseStudiesWithHtml = await Promise.all(
     position: relative;
     z-index: 1;
     max-width: var(--content-width);
+  }
+
+  .hero-credit {
+    position: absolute;
+    bottom: var(--space-sm);
+    right: var(--space-md);
+    font-size: 0.625rem;
+    color: var(--hero-credit-color);
+    margin: 0;
+    z-index: 1;
   }
 
   .hero-title {
