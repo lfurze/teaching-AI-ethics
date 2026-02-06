@@ -23,7 +23,7 @@ const seriesLabel = series === '2023' ? 'Original Series' : `${series} Update`;
 <a href={`/articles/${slug}`} class="card">
   {coverImage && (
     <div class="card-image">
-      <img src={coverImage} alt={`Cover image for ${title}`} loading="lazy" />
+      <img src={coverImage} alt={`Cover image for ${title}`} loading="lazy" width="1920" height="1280" />
     </div>
   )}
   {!coverImage && <div class="card-accent"></div>}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leonfurze.com/sitemap-index.xml
+Sitemap: https://teachingaiethics.com/sitemap-index.xml
