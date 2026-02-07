@@ -58,7 +58,7 @@ const levelColor = levelColors[topic.level] || 'var(--accent)';
       <h1>{topic.name}</h1>
       <p class="topic-description">{topic.description}</p>
       {coverCredit && (
-        <p class="topic-cover-credit">Image: {coverCredit}</p>
+        <p class="topic-cover-credit" set:html={`Image: ${coverCredit}`} />
       )}
     </header>
 

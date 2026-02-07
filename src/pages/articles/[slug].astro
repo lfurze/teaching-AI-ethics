@@ -68,7 +68,7 @@ const jsonLd = {
         ))}
       </div>
       {post.coverCredit && (
-        <p class="article-cover-credit">Image: {post.coverCredit}</p>
+        <p class="article-cover-credit" set:html={`Image: ${post.coverCredit}`} />
       )}
     </header>
 
