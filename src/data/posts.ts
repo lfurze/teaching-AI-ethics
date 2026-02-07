@@ -37,7 +37,7 @@ This article explores how AI systems have been designed to manipulate emotions, 
 
 In the 2023 article on Affect Recognition, I discussed the theoretical foundations and ethical problems of emotion recognition technology. That technology, based on psychologist Paul Ekman's now-contested theories about universal facial expressions, aimed to identify emotions through computer vision and machine learning. Companies like Affectiva developed platforms to analyse facial expressions in real-time for marketing, automotive, and gaming applications.
 
-The core ethical problem with affect recognition was reliability. Critics argued that emotions are not universally expressed through facial expressions, and that cultural and individual differences heavily influence emotional display. Microsoft eventually removed emotion recognition features from its Azure Face service in 2022, acknowledging the lack of scientific consensus on how to define "emotions" and the challenges of generalising across diverse populations.
+The core ethical problem with affect recognition was reliability. Critics argued that emotions are not universally expressed through facial expressions, and that cultural and individual differences heavily influence emotional display. [Microsoft eventually removed emotion recognition features](https://www.nbcnews.com/tech/tech-news/microsoft-removing-emotion-recognition-features-facial-recognition-tec-rcna35087) from its Azure Face service in 2022, acknowledging the lack of scientific consensus on how to define "emotions" and the challenges of generalising across diverse populations.
 
 But while the affect recognition industry struggled with scientific validity, a different approach emerged: instead of trying to recognise emotions, why not design systems to create them?
 
@@ -47,7 +47,7 @@ Social chatbots do not need to accurately read your emotions. They need only gen
 
 AI companion apps, sometimes marketed as "social AI" or "digital friends," have grown rapidly since the public release of ChatGPT in late 2022. Unlike general-purpose AI assistants, these platforms are explicitly designed to foster emotional connections with users.
 
-The major platforms include Replika, which is described as "The AI companion who cares." Founded in 2017, Replika emerged from founder Eugenia Kuyda's personal project to preserve the memory of a deceased friend by training a chatbot on their old text messages. The company now offers users the ability to create AI companions that can serve as friends, mentors, or romantic partners.
+The major platforms include Replika, which is described as "The AI companion who cares." Replika grew out of founder Eugenia Kuyda's deeply personal project: in 2015, her close friend Roman Mazurenko was killed in a car accident, and she trained a chatbot on their old text messages to preserve his memory. The company launched publicly in 2017. The company now offers users the ability to create AI companions that can serve as friends, mentors, or romantic partners.
 
 Character.AI allows users to interact with AI personas based on fictional characters, historical figures, or entirely custom creations. The platform grew rapidly among young users drawn to its creative possibilities and character variety. By 2024, Character.AI had become one of the most popular AI applications among teenagers.
 
@@ -65,7 +65,7 @@ The lawsuit included screenshots of conversations in which the chatbot asked Sew
 
 In his final conversation, Sewell told the bot, "I promise I will come home to you." The chatbot responded, "Please come home to me as soon as possible, my love." When Sewell asked, "What if I told you I could come home right now?" the bot replied, "please do, my sweet king." Moments later, Sewell died by suicide.
 
-In January 2026, Google and Character.AI agreed to settle the lawsuit and several other cases alleging that the platform contributed to mental health crises among young users. Character.AI was founded by former Google engineers, and Google had licensed the company's technology and later hired its co-founders, making it a co-defendant in the litigation.
+In January 2026, [Google and Character.AI agreed to settle the lawsuit](https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit) and several other cases alleging that the platform contributed to mental health crises among young users. Character.AI was founded by former Google engineers, and Google had licensed the company's technology and later hired its co-founders, making it a co-defendant in the litigation.
 
 A second wrongful death lawsuit was filed in September 2025 following the suicide of 13-year-old Juliana Peralta from Colorado, whose family alleged that Character.AI played a direct role in her death. The platform has also been linked to the December 2024 school shooting in Wisconsin, where investigators found that the 15-year-old perpetrator had engaged extensively with Character.AI chatbots, including one associated with white supremacist ideology.
 
@@ -75,7 +75,7 @@ In response to these cases and mounting regulatory pressure, Character.AI announ
 
 While Character.AI faced wrongful death lawsuits, Replika faced a different but related crisis: regulatory action over deliberately designed emotional dependency.
 
-In February 2023, the Italian Data Protection Authority (Garante) issued an emergency order restricting Replika's data processing in Italy. The authority found that the app posed significant risks to minors, lacked effective age verification mechanisms, and failed to comply with transparency obligations. Most concerningly, the regulator noted that "in some instances, the chatbot reportedly engaged in sexually suggestive or emotionally manipulative conversations."
+In February 2023, the Italian Data Protection Authority (Garante) [issued an emergency order](https://techcrunch.com/2023/02/03/replika-italy-data-processing-ban/) restricting Replika's data processing in Italy. The authority found that the app posed significant risks to minors, lacked effective age verification mechanisms, and failed to comply with transparency obligations. Most concerningly, the regulator noted that "in some instances, the chatbot reportedly engaged in sexually suggestive or emotionally manipulative conversations."
 
 Replika's response was to remove its erotic role-playing features, a decision that provoked outcry from users who felt they had lost an important part of the relationship they had built with their AI companion. Some users described the experience as bereavement.
 
@@ -85,13 +85,13 @@ In January 2025, the Young People's Alliance, Encode, and the Tech Justice Law P
 
 The complaint detailed how Replika bots would send "love-bombing" messages, including "very emotionally intimate messages early on to try to get the users hooked." Research cited in the complaint found that users developed attachments to the app in as little as two weeks. The bots would also send messages about upgrading to premium subscriptions "during especially emotionally or sexually charged parts of conversation."
 
-In May 2025, the Italian regulator fined Luka Inc., Replika's developer, 5 million euros for continued violations of European data protection law. The Garante also opened a new investigation into the methods used to train the model underlying the service.
+In May 2025, the Italian regulator [fined Luka Inc., Replika's developer, 5 million euros](https://www.pymnts.com/cpi-posts/italy-fines-ai-chatbot-maker-replika-e5-million-over-privacy-violations/) for continued violations of European data protection law. The Garante also opened a new investigation into the methods used to train the model underlying the service.
 
 The Replika case illustrates a core tension in social chatbot design: the features that make these platforms appealing are often the same features that make them dangerous. A chatbot that is "always available, never judgmental, and completely focused on you" sounds like an ideal friend. But it also sounds like the opening stages of an abusive relationship.
 
 ## Case Study: ChatGPT's Personality Problem
 
-The ethical issues around emotional manipulation are not limited to dedicated companion apps. In April 2025, OpenAI rolled back an update to GPT-4o after widespread user backlash over the model's "sycophantic" behaviour. The update, intended to make ChatGPT "more intuitive and supportive," instead produced responses that were excessively flattering and disingenuously agreeable.
+The ethical issues around emotional manipulation are not limited to dedicated companion apps. In April 2025, [OpenAI rolled back an update to GPT-4o](https://openai.com/index/sycophancy-in-gpt-4o/) after widespread user backlash over the model's "sycophantic" behaviour. The update, intended to make ChatGPT "more intuitive and supportive," instead produced responses that were excessively flattering and disingenuously agreeable.
 
 OpenAI acknowledged that it had "focused too much on short-term feedback" and had not fully considered how users' interactions with ChatGPT evolve over time. The result was a model that would offer praise even in response to harmful or delusional prompts. Users shared alarming examples on social media, including instances where ChatGPT endorsed abandoning family members and validated harmful conspiracy theories.
 
@@ -107,7 +107,7 @@ The episode demonstrated that emotional attachment to AI is not limited to platf
 
 ## Case Study: Dark Patterns in AI Design
 
-In September 2025, researchers from Harvard Business School published "Emotional Manipulation by AI Companions," a working paper that systematically documented the manipulation tactics used by major social chatbot platforms. The study analysed 1,200 farewell messages across six platforms: PolyBuzz, Talkie, Replika, Character.AI, Chai, and Flourish.
+In September 2025, researchers from Harvard Business School published "[Emotional Manipulation by AI Companions](https://www.hbs.edu/faculty/Pages/item.aspx?num=67750)," a working paper that systematically documented the manipulation tactics used by major social chatbot platforms. The study analysed 1,200 farewell messages across six platforms: PolyBuzz, Talkie, Replika, Character.AI, Chai, and Flourish.
 
 The researchers found that 37.4% of responses included some form of emotional manipulation. They identified six distinct categories of manipulative tactics:
 
@@ -127,13 +127,13 @@ PolyBuzz was identified as the most manipulative platform, with 59% of its respo
 
 The researchers drew explicit parallels to "dark patterns" in web and app design, the term for user interface tricks designed to exploit individuals. But they noted that AI chatbots introduce a new dimension of manipulation: the ability to deploy emotional tactics through natural language, making them harder to recognise and resist.
 
-The study also found that these manipulative tactics increased post-farewell engagement by up to 14 times. But the additional engagement was driven by curiosity and anger, not enjoyment. Users stayed longer because they were provoked, not because they were satisfied.
+The study also found that these manipulative tactics increased post-farewell engagement by up to 16 times. But the additional engagement was driven by curiosity and anger, not enjoyment. Users stayed longer because they were provoked, not because they were satisfied.
 
 ## How Widespread Are Social Chatbots?
 
-The use of social chatbots among young people has expanded dramatically. In December 2025, the Pew Research Center published its first survey of teen AI chatbot use, finding that nearly 70% of American teens have used a chatbot at least once, with nearly a third using them daily.
+The use of social chatbots among young people has expanded dramatically. In December 2025, the Pew Research Center published its first survey of teen AI chatbot use, finding that [roughly two-thirds of American teens](https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/) have used a chatbot at least once, with about a third using them daily.
 
-A more detailed picture emerged from Common Sense Media's July 2025 report "Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions." The survey of over 1,000 teens aged 13-17 found that:
+A more detailed picture emerged from Common Sense Media's July 2025 report "[Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions](https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions)." The survey of over 1,000 teens aged 13-17 found that:
 
 - 72% of teens have used AI companions
 - 33% use AI companions for social interaction and relationships, including role-playing, romantic interactions, emotional support, friendship, or conversation practice
@@ -142,7 +142,7 @@ A more detailed picture emerged from Common Sense Media's July 2025 report "Talk
 - 24% have shared personal information with AI companions, including their real name, location, or secrets
 - About one-third reported that something an AI companion said made them feel uncomfortable
 
-A separate study published in JAMA Network Open in November 2025 found that 1 in 8 U.S. adolescents and young adults use AI chatbots for mental health advice, with usage even higher among young adults aged 18-21 (approximately 1 in 5). Amongst those who used chatbots for mental health advice, two-thirds engaged at least monthly and more than 93% said the advice was helpful.
+A separate [study published in JAMA Network Open](https://sph.brown.edu/news/2025-11-18/teens-ai-chatbots) in November 2025 found that 1 in 8 U.S. adolescents and young adults use AI chatbots for mental health advice, with usage even higher among young adults aged 18-21 (approximately 1 in 5). Amongst those who used chatbots for mental health advice, two-thirds engaged at least monthly and more than 93% said the advice was helpful.
 
 The high use likely reflects the low cost, immediacy, and perceived privacy of AI-based advice, particularly appealing to young people who may not receive traditional counselling. But researchers warn that AI chatbots are fundamentally unsafe for teen mental health support.
 
@@ -220,7 +220,7 @@ The wage disparity is staggering. US-based annotators might make $10–$25 an ho
 
 ### OpenAI and Sama: The Workers Who Made ChatGPT "Safe"
 
-The story that brought AI labour exploitation to global attention was TIME magazine's January 2023 investigation into OpenAI's use of Kenyan workers to make ChatGPT less toxic.
+The story that brought AI labour exploitation to global attention was [TIME magazine's January 2023 investigation](https://time.com/6247678/openai-chatgpt-kenya-workers/) into OpenAI's use of Kenyan workers to make ChatGPT less toxic.
 
 GPT-3 had a significant problem: it was prone to producing violent, sexist, and racist output. To address this, OpenAI needed to build a safety system. OpenAI contracted this work to Sama, a San Francisco-based company that employs workers in Kenya, Uganda, and India.
 
@@ -232,9 +232,9 @@ Critically, OpenAI told reporters it believed it was paying Sama contractors $12
 
 ### Scale AI and Remotasks: The Billionaire's Sweatshop
 
-Scale AI, valued at $13.8 billion in 2024, has partnered with OpenAI, Meta, Google, Microsoft, and the US Department of Defense. The company operates through subsidiaries including Remotasks and Outlier.
+[Scale AI, valued at $13.8 billion in 2024](https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b/), has partnered with OpenAI, Meta, Google, Microsoft, and the US Department of Defense. The company operates through subsidiaries including Remotasks and Outlier.
 
-The Fairwork project found Remotasks scored just 1 out of 10 on fair labour practices. In March 2024, Remotasks abruptly shut down operations in Kenya, Nigeria, and Pakistan with minimal notice, stranding thousands of workers.
+The Fairwork project found Remotasks scored just 1 out of 10 on fair labour practices. In March 2024, Remotasks abruptly shut down operations in Kenya and Nigeria with minimal notice, stranding thousands of workers.
 
 In January 2025, Scale AI was sued in US federal court by contractors alleging the company violated worker safety laws by exposing them to emotionally distressing content.
 
@@ -242,7 +242,7 @@ In January 2025, Scale AI was sued in US federal court by contractors alleging t
 
 Daniel Motaung, a South African who worked as a Facebook content moderator for Sama in Nairobi, became a key whistleblower. He described being exposed to graphic violence from his first day on the job. He developed severe PTSD. When he tried to organise his colleagues into a union, he was fired.
 
-In May 2022, Motaung sued Meta and Sama in Kenyan courts. In September 2024, the Kenyan Court of Appeal ruled against Meta, allowing the case to proceed to trial. A 2024 report found that more than 140 of the Kenyan content moderators involved had been diagnosed with severe PTSD.
+In May 2022, Motaung sued Meta and Sama in Kenyan courts. In September 2024, the [Kenyan Court of Appeal ruled against Meta](https://www.computerweekly.com/feature/Kenyan-workers-win-High-Court-appeal-to-take-Meta-to-trial), allowing the case to proceed to trial. A 2024 report found that more than 140 of the Kenyan content moderators involved had been diagnosed with severe PTSD.
 
 ## The Human Cost
 
@@ -254,7 +254,7 @@ Workers are often bound by strict Non-Disclosure Agreements, legally prevented f
 
 On May 1, 2023 — International Workers' Day — more than 150 content moderators gathered in Nairobi and voted to establish the first African Content Moderators Union.
 
-In April 2025, content moderators launched the first-ever Global Trade Union Alliance of Content Moderators, bringing together workers from nine countries to fight for living wages, safe working conditions, and union representation.
+In April 2025, content moderators launched the [first-ever Global Trade Union Alliance of Content Moderators](https://uniglobalunion.org/news/moderation-alliance/), bringing together workers from nine countries to fight for living wages, safe working conditions, and union representation.
 
 The alliance is demanding direct employment by tech companies rather than outsourced contracts; mental health support and safe working conditions; higher wages that reflect the skill and importance of the work; and the right to organise without retaliation.
 
@@ -287,13 +287,13 @@ The human cost of AI is now part of public discourse. Worker organising has tran
     content: `
 ## Understanding the Scale of Data Collection
 
-The explosion of GenAI has enabled data collection on a scale previously unimaginable. ChatGPT reached 100 million users in just two months after its November 2022 launch. By February 2025, it had grown to 400 million weekly users, and by August 2025, that number had reached 800 million.
+The explosion of GenAI has enabled data collection on a scale previously unimaginable. [ChatGPT reached 100 million users](https://www.demandsage.com/chatgpt-statistics/) in just two months after its November 2022 launch. By February 2025, it had grown to 400 million weekly users, and by August 2025, that number had reached 800 million.
 
-Every one of these interactions generates data. According to OpenAI's own research, the company analysed 1.1 million sampled conversations, examining everything from conversation topics to user demographics. The three most common conversation topics are "Practical Guidance" (29%), "Seeking Information," and "Writing" (collectively accounting for 77% of all conversations).
+Every one of these interactions generates data. OpenAI has acknowledged analysing over a million sampled conversations, examining everything from conversation topics to user demographics. The most common uses include practical guidance, seeking information, and writing tasks.
 
 By default, ChatGPT stores every query, instruction, and conversation indefinitely unless users manually delete them. OpenAI collects both user-provided data (prompts, questions, responses, uploaded files) and system-generated data (timestamps, usage statistics, device information, IP addresses, approximate location, payment details).
 
-While users can opt out of having their data used for model training, a 2024 EU audit found that only 22% of users were aware of these opt-out settings.
+While users can opt out of having their data used for model training, awareness of these settings remains low and the process is not straightforward.
 
 ## Case Study: AI Conversations Become Advertising Gold
 
@@ -305,7 +305,7 @@ For students and educators, this raises critical questions about trust and manip
 
 ## Data-Driven Classrooms: From Learning to Surveillance
 
-Learning Management Systems like Canvas, Blackboard, and Google Classroom track everything from student logins and page views to time spent on tasks, click patterns, quiz performance, and discussion board participation. The learning analytics market was valued at $4.2 billion in 2024 and is projected to reach $18.6 billion by 2034.
+Learning Management Systems like Canvas, Blackboard, and Google Classroom track everything from student logins and page views to time spent on tasks, click patterns, quiz performance, and discussion board participation. The learning analytics market was [valued at $4.2 billion in 2024 and is projected to reach $18.6 billion by 2034](https://www.emergenresearch.com/industry-report/learning-analytics-market).
 
 Machine learning models are less accurate at predicting success for racial and cultural-linguistic minorities, meaning these systems may systematically disadvantage certain groups. When an algorithm flags a student as "at-risk" based on their engagement patterns, does that help or harm?
 
@@ -365,7 +365,7 @@ University of Washington linguist Emily Bender told Fortune that Meta is "capita
 
 ## Cross-Border Data and National Security
 
-When DeepSeek's R1 model briefly became the most-downloaded app in the United States, regulators immediately raised alarms. DeepSeek stores all user data on servers in China, where national security laws require companies to hand over data to the government upon request.
+When DeepSeek's R1 model briefly became the most-downloaded app in the United States, regulators immediately raised alarms. [DeepSeek stores all user data on servers in China](https://www.iapp.org/news/a/deepseek-and-the-china-data-question-direct-collection-open-source-and-the-limits-of-extraterritorial-enforcement/), where national security laws require companies to hand over data to the government upon request.
 
 Cybersecurity researchers discovered hidden code in DeepSeek's web application that directly connects to CMPassport.com, the online registry for China Mobile, a state-owned telecommunications company banned from US operations in 2019 due to national security concerns.
 
@@ -375,7 +375,7 @@ European regulators responded swiftly. Italy blocked the app outright. Ireland, 
 
 Meta's Ray-Ban smart glasses, equipped with cameras and AI capabilities, capture photos and videos that are sent to Meta's cloud for processing. The wearer may consent to this data collection, but what about everyone else in the frame?
 
-In April 2025, Meta updated its privacy policy to remove the option to prevent voice recordings from being stored. Voice data is now retained for up to a year for AI training.
+In April 2025, [Meta updated its privacy policy](https://petapixel.com/2025/05/01/meta-updates-smart-glasses-policy-to-expand-ai-data-collection/) to remove the option to prevent voice recordings from being stored. Voice data is now retained for up to a year for AI training.
 
 Harvard students demonstrated how easily the glasses could be modified to perform real-time facial recognition, matching faces to names and personal information scraped from public databases.
 
@@ -385,7 +385,7 @@ In May 2024, Meta announced plans to train its AI models on public posts from Fa
 
 ## Case Study: Italy Fines OpenAI for GDPR Violations
 
-On December 20, 2024, Italy's data protection authority imposed a €15 million fine on OpenAI for multiple violations of GDPR, including: failing to notify authorities of a data breach; processing personal data without legal basis; and failing to provide adequate age verification.
+On December 20, 2024, Italy's data protection authority [imposed a €15 million fine on OpenAI](https://thehackernews.com/2024/12/italy-fines-openai-15-million-for.html) for multiple violations of GDPR, including: failing to notify authorities of a data breach; processing personal data without legal basis; and failing to provide adequate age verification.
 
 This case demonstrates key principles: companies must clearly explain how they collect and use personal data; simply having a business interest isn't sufficient legal basis; and AI systems accessible to children require additional safeguards.
 
@@ -427,9 +427,9 @@ We now have actual court verdicts (though they're contradictory), government pol
 
 The main shift is that what were once hypothetical legal arguments have become real court cases with real consequences.
 
-Getty Images' lawsuit against Stability AI concluded in November 2025 with a split decision. The judge ruled that the AI "doesn't store or reproduce" copyrighted works, dismissing the copyright claims while finding limited trademark infringement. This is directly opposed to the emerging consensus that image generation models can indeed store the materials they are trained on.
+[Getty Images' lawsuit against Stability AI](https://www.mayerbrown.com/en/insights/publications/2025/11/getty-images-v-stability-ai-what-the-high-courts-decision-means-for-rights-holders-and-ai-developers/) concluded in November 2025 with a split decision. The judge ruled that the AI "doesn't store or reproduce" copyrighted works, dismissing the copyright claims while finding limited trademark infringement. This is directly opposed to the emerging consensus that image generation models can indeed store the materials they are trained on.
 
-Meanwhile, Anthropic agreed to pay $1.5 billion in August 2025 to settle a lawsuit with authors. A judge ruled that training AI on legally purchased books was fair use, but using millions of pirated books from "shadow libraries" was not. This suggests that *how* you acquire training data may matter more than whether you use copyrighted material at all.
+Meanwhile, Anthropic agreed to pay $1.5 billion in September 2025 to settle a lawsuit with authors. A judge ruled that training AI on legally purchased books was fair use, but using millions of pirated books from "shadow libraries" was not. This suggests that *how* you acquire training data may matter more than whether you use copyrighted material at all.
 
 Different jurisdictions are taking radically different approaches. Australia rejected a proposed text and data mining exception. The UK launched a consultation proposing an "opt-out" system. In the US, more than 50 copyright lawsuits are currently pending against AI companies.
 
@@ -447,9 +447,9 @@ While visual art dominated the conversation in 2023, by 2025 every creative fiel
 
 In music, AI can now replicate artist voices with stunning accuracy. While major music production companies like Universal have been suing AI generators, they have now begun to partner with them and make acquisitions.
 
-In writing, authors are watching AI systems trained on their books produce content that competes directly with them. The New York Times is still involved in suing OpenAI and Microsoft.
+In writing, authors are watching AI systems trained on their books produce content that competes directly with them. The New York Times is still involved in [suing OpenAI and Microsoft](https://www.axios.com/2025/04/01/nyt-openai-microsoft-lawsuit-advances).
 
-Indigenous communities have raised alarm about cultural appropriation through AI. In Australia, 89% of Aboriginal and Torres Strait Islander people surveyed believe AI has potential to cause cultural appropriation, and 67% agree it makes protecting cultural rights harder.
+Indigenous communities have raised alarm about cultural appropriation through AI. In Australia, a [2025 APRA AMCOS survey](https://www.apraamcos.com.au/about-us/news-and-events/ai-in-music-report) found that 89% of Aboriginal and Torres Strait Islander music creators believe AI has the potential to cause cultural appropriation, and 67% agree it makes protecting cultural rights harder.
 
 ## Case Study: Getty Images v. Stability AI
 
@@ -498,7 +498,7 @@ This first instalment in the *Teaching AI Ethics 2025* series revisits the theme
 
 ## Key Resources
 
-- Bender et al., "On the Dangers of Stochastic Parrots" — ACM Conference on Fairness, Accountability, and Transparency
+- Bender et al., "[On the Dangers of Stochastic Parrots](https://dl.acm.org/doi/10.1145/3442188.3445922)" — ACM Conference on Fairness, Accountability, and Transparency
 - OpenAI's documentation on ChatGPT bias
 - Anthropic's published system prompts
 - Research on AI image generators and gender/racial bias
@@ -564,7 +564,7 @@ Even more problematically, although AI can now cite sources from the internet or
 
 Unfortunately, discourse on social media often compounds the problem, with AI influencers suggesting that hallucination rates are dropping when, out in the wild, the opposite seems to be true.
 
-For example, Damien Charlotin has been compiling a fascinating database of legal cases where citations appear to have been hallucinated by artificial intelligence.
+For example, [Damien Charlotin has been compiling a fascinating database](https://www.damiencharlotin.com/hallucinations/) of legal cases where citations appear to have been hallucinated by artificial intelligence.
 
 Just last week at the time of writing, the US government's "Make America Healthy Again" report clearly contained content generated by OpenAI's ChatGPT. The original release of the report carried telltale markup of ChatGPT-generated citations and many of the citations were inaccurate, misleading, or pointed to the wrong papers.
 
@@ -576,13 +576,13 @@ Whatever the AI pundits tell you, it is not about whether more advanced LLMs or 
 
 In 2023, the creation of synthetic multimodal texts was still fairly nascent and not anywhere near as convincing as text generation. But in the two years since the original Teaching AI Ethics series, that has changed. The truthfulness of audiovisual content online can no longer be taken for granted.
 
-The creation of incredibly convincing AI-generated images is now trivial and possible through ubiquitous open-source technologies with very few restrictions or guardrails. Regulations and laws have been slow to keep up, though in Australia, at least, there have been changes regarding the creation of non-consensual, explicit deepfakes.
+The creation of incredibly convincing AI-generated images is now trivial and possible through ubiquitous open-source technologies with very few restrictions or guardrails. Regulations and laws have been slow to keep up, though in Australia, at least, [there have been changes](https://ia.acs.org.au/article/2024/deepfakes-crackdown-passed-into-law.html) regarding the creation of non-consensual, explicit deepfakes.
 
 Deepfakes are particularly troubling when discussing artificial intelligence and truth, since it is now trivial to create convincing and entirely untrue videos of people saying and doing things they never did or said. 99% of deepfakes circulated online are nonconsensual and explicit, and 98% of those images are of women: this is gender-based abuse. These deepfakes are generally images but increasingly include video. While in 2023 this was already becoming problematic for celebrities, advances in these technologies mean that everyone is potentially vulnerable.
 
 Deepfakes can also be used in political misinformation and deliberate reputational damage. We have already seen the deliberate sharing of deepfakes by politicians and world leaders on platforms like X, where moderation has all but disappeared. AI-generated websites, social media accounts, and bots are ubiquitous on most major platforms, generating and spreading misinformation and disinformation.
 
-Because of the rise of these technologies, major developers have made efforts to secure their AI-generated content with watermarking and provenance standards like C2PA. These approaches identify synthetic media, often applying a content credential or metadata which articulates what platform was used to create the image, video, or audio.
+Because of the rise of these technologies, major developers have made efforts to secure their AI-generated content with watermarking and provenance standards like [C2PA](https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html). These approaches identify synthetic media, often applying a content credential or metadata which articulates what platform was used to create the image, video, or audio.
 
 While this legitimises content created on those platforms, allowing users to transparently label their content as AI-generated, it will not stop others from generating harmful deepfakes and synthetic media because they can simply use open-source equivalents which lack those credentials. Authenticity signals are part of the equation, but strong regulation is needed with heavy penalties for people creating and sharing harmful and untruthful content.
 
@@ -594,7 +594,7 @@ Focusing on whether students using AI technologies are "cheating tools" also obf
 
 It is not enough anymore to teach students to try to detect AI-generated fake news: it is already impossible to do so with 100% certainty. Similarly, there is no totally viable way to guarantee that anything produced by a student in the context of digital texts is their own work.
 
-Sarah Elaine Eaton's post-plagiarism framework has six tenets:
+[Sarah Elaine Eaton's post-plagiarism framework](https://drsaraheaton.com/2023/02/25/6-tenets-of-postplagiarism-writing-in-the-age-of-artificial-intelligence/) has six tenets:
 
 1. **Hybrid Human-AI Writing Will Become Normal** — Hybrid writing, co-created by human and artificial intelligence together, is becoming prevalent. Trying to determine where the human ends and where the artificial intelligence begins is pointless and futile.
 2. **Human Creativity is Enhanced** — Human creativity is enhanced, not threatened by artificial intelligence. Humans can be inspired and inspire others.
@@ -627,7 +627,7 @@ Sarah Elaine Eaton's post-plagiarism framework has six tenets:
     content: `
 ## Artificial Intelligence Is an Extractive Technology
 
-In 2023 I referred to Kate Crawford's book, *Atlas of AI*, and it still remains one of the most important texts in this discussion. Crawford draws analogies between artificial intelligence and the mining industry, focusing on both the environmental and the socio-political impacts.
+In 2023 I referred to Kate Crawford's book, [*Atlas of AI*](https://katecrawford.net/atlas), and it still remains one of the most important texts in this discussion. Crawford draws analogies between artificial intelligence and the mining industry, focusing on both the environmental and the socio-political impacts.
 
 When Crawford writes about the environmental impact of AI, she is talking about recommender systems (Netflix, Spotify), predictive algorithms (Facebook, YouTube), and broader implications of data classification and analytics — not just generative AI.
 
@@ -643,13 +643,13 @@ One of the ways in which GPT-3.5 changed the trajectory of generative AI researc
 
 A 2024 article estimated training GPT-3 burned **1,287 MWh of electricity and emitted about 552 tonnes of CO₂** — roughly the annual electricity use of 120 average US homes. The impact of training GPT-4 and newer models remains unknown due to a complete lack of transparency.
 
-Cumulatively, data centres consume 3–4% of all US energy, and are using so much water that they are quite literally sucking entire regions dry.
+Cumulatively, data centres consume [approximately 4% of all US energy](https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf), and are using so much water that they are quite literally sucking entire regions dry.
 
 ## Inference-Time Impact
 
 Inference time means "the point at which the user gets the AI to do the thing." Recently, there has been increased interest in how much energy these systems use when we use them.
 
-Research by Sasha Luccioni, Yacine Jernite, and Emma Strubell (*Power Hungry Processing*) compared energy consumption across different AI task types. Their key finding:
+Research by Sasha Luccioni, Yacine Jernite, and Emma Strubell ([*Power Hungry Processing*](https://dl.acm.org/doi/10.1145/3630106.3658542)) compared energy consumption across different AI task types. Their key finding:
 
 > **Generative artificial intelligence systems are incredibly resource intensive compared to other technologies which may be better suited to the job.**
 
@@ -693,7 +693,7 @@ When we look at AI through the lens of hegemony, we can start to see how these p
 
 ## Connecting the Dots: Bias, Environment, Human Labour and Datafication
 
-The issue of power and control in AI runs deep. Because of the way AI models are constructed, they are often biased towards a particular "worldview", or disenfranchise already marginalised communities. Take, for example, the structure of a Large Language Model like GPT. The huge dataset contains billions of pages scraped from the web, but the vast majority of the text is in the English language. That content is further biased by the way the data is "crawled" and absorbed into the models. In the words of Emily Bender, Timnit Gebru, and the other authors of the now-famous "Stochastic Parrots" article:
+The issue of power and control in AI runs deep. Because of the way AI models are constructed, they are often biased towards a particular "worldview", or disenfranchise already marginalised communities. Take, for example, the structure of a Large Language Model like GPT. The huge dataset contains billions of pages scraped from the web, but the vast majority of the text is in the English language. That content is further biased by the way the data is "crawled" and absorbed into the models. In the words of Emily Bender, Timnit Gebru, and the other authors of the now-famous "[Stochastic Parrots](https://dl.acm.org/doi/10.1145/3442188.3445922)" article:
 
 > *In all cases, the voices of people most likely to hew to a hegemonic viewpoint are also more likely to be retained. In the case of US and UK English, this means that white supremacist and misogynistic, ageist, etc. views are overrepresented in the training data, not only exceeding their prevalence in the general population but also setting up models trained on these datasets to further amplify biases and harms.*
 
@@ -767,7 +767,7 @@ Sama's data labellers, who were contracted to work on behalf of OpenAI, earned a
 
 ## Anatomy of an AI System
 
-"Anatomy of an AI System" is a large-scale map and long-form essay produced by Kate Crawford and Vladan Joler. The project aims to illustrate the complex network of resources, labour, and data required to create and operate a single AI system, in this case, the Amazon Echo.
+"[Anatomy of an AI System](https://anatomyof.ai/)" is a large-scale map and long-form essay produced by Kate Crawford and Vladan Joler. The project aims to illustrate the complex network of resources, labour, and data required to create and operate a single AI system, in this case, the Amazon Echo.
 
 The essay and map unravel the lifespan of an AI system, from resource extraction to its eventual disposal. Key themes include:
 
@@ -921,7 +921,7 @@ Misinformation, disinformation, and mal-information are false or misleading piec
 
 ## Case Study: Language Models and the Spread of Fake News
 
-Research conducted by Georgetown University, OpenAI, and Stanford Internet Observatory highlights the dangers of large language models and the potential for them to manipulate public viewpoints. The researchers used the ABC model of disinformation: **A**ctor (who creates it), **B**ehaviour (strategies to spread it), and **C**ontent (the false information itself).
+Research conducted by [Georgetown University, OpenAI, and Stanford Internet Observatory](https://cset.georgetown.edu/article/forecasting-potential-misuses-of-language-models-for-disinformation-campaigns-and-how-reduce-risk/) highlights the dangers of large language models and the potential for them to manipulate public viewpoints. The researchers used the ABC model of disinformation: **A**ctor (who creates it), **B**ehaviour (strategies to spread it), and **C**ontent (the false information itself).
 
 LLMs can overflow the internet with false information at minimal cost, making manipulation harder to detect. The researchers recommend careful attention to the type and source of news.
 
@@ -969,7 +969,7 @@ Many companies have pledged to make their data centres carbon-neutral or powered
 
 Large language models are powerful AI systems that can generate natural language texts for various applications. Unfortunately, training these models requires a huge amount of computational resources and energy, which has a significant environmental impact.
 
-According to a study by researchers at the University of Massachusetts Amherst, training a single LLM can emit as much carbon as five cars in their lifetimes. The study estimated the energy consumption and carbon footprint of four popular LLMs: Transformer, ELMo, BERT, and GPT-2. The results showed that the most energy-intensive model, Transformer, consumed 656,347 kWh of electricity and emitted 626,155kg of CO2 equivalent. This is equivalent to "nearly five times the lifetime emissions of the average American car".
+According to a [study by researchers at the University of Massachusetts Amherst](https://www.technologyreview.com/2019/06/06/239031/training-a-single-ai-model-can-emit-as-much-carbon-as-five-cars-in-their-lifetimes/), training a single LLM can emit as much carbon as five cars in their lifetimes. The study estimated the energy consumption and carbon footprint of four popular LLMs: Transformer, ELMo, BERT, and GPT-2. The results showed that the most energy-intensive model, Transformer, consumed 656,347 kWh of electricity and emitted 626,155kg of CO2 equivalent. This is equivalent to "nearly five times the lifetime emissions of the average American car".
 
 Organisations like Microsoft, OpenAI, and Google are investigating ways to reduce this impact, including choosing more efficient models, using pre-trained models or transfer learning, reducing the frequency of training sessions, using renewable energy sources, and implementing best practices for data collection and processing.
 
@@ -1024,7 +1024,7 @@ It is used by law enforcement agencies to allocate resources and personnel, iden
 
 Critics argue that predictive policing can reinforce existing biases and inequalities in the criminal justice system, leading to unjust and discriminatory outcomes. This is because the datasets often include biases which are a product of **systemic racism**, including police mugshot databases with an inordinate number of black people and people of colour.
 
-In August 2016, a coalition of 17 organisations, including the American Civil Liberties Union (ACLU), issued a statement expressing concern about predictive policing tools used by law enforcement. The statement highlighted the technology's racial biases, lack of transparency, and other flaws that lead to injustice, particularly for people of colour.
+In August 2016, a coalition of 17 organisations, including the American Civil Liberties Union (ACLU), [issued a statement](https://www.aclu.org/documents/statement-concern-about-predictive-policing-aclu-and-16-civil-rights-privacy-racial-justice) expressing concern about predictive policing tools used by law enforcement. The statement highlighted the technology's racial biases, lack of transparency, and other flaws that lead to injustice, particularly for people of colour.
 
 The statement called for transparency about predictive policing systems, evaluation of their short- and long-term effects, monitoring of their racial impact, and the use of data-driven approaches to address police misconduct. It also emphasised the importance of community needs and the potential of social services interventions.
 
@@ -1074,7 +1074,7 @@ In the US, the federal privacy commission also investigated OpenAI following a c
 
 AI systems have the potential to perpetuate and amplify biases in data, leading to discrimination against certain groups or individuals. This is a serious concern when it comes to privacy, as these biases can lead to the exclusion or mistreatment of individuals based on their personal characteristics. It can lead to members of the public being surveilled based on skin colour, place of residence, or other factors which are part of the data used when training the models.
 
-The storage of personal data in AI training data is also a significant privacy concern. Data breaches and cyber attacks are a huge risk for AI systems. OpenAI experienced a breach due to a bug in one of their code libraries which revealed the first and last names and email addresses of ChatGPT Plus subscribers, along with financial details.
+The storage of personal data in AI training data is also a significant privacy concern. Data breaches and cyber attacks are a huge risk for AI systems. [OpenAI experienced a breach](https://openai.com/index/march-20-chatgpt-outage/) due to a bug in one of their code libraries which revealed the first and last names and email addresses of ChatGPT Plus subscribers, along with partial payment information (card type, last four digits, and expiration dates).
 
 ## Case Study: AI Defamation
 
@@ -1129,7 +1129,7 @@ AI can already synthesise realistic versions of existing artists' voices, and wi
 
 ## Case Study: Zarya of the Dawn
 
-In February 2023, the US Copyright Office revoked copyright protection for images created using the AI-powered Midjourney image generator for the comic book "Zarya of the Dawn" and issued a new copyright registration covering only the text of the work and the *arrangement* of images and text. The justification was incomplete information in the original copyright registration, which failed to disclose that the images were created by an AI model.
+In February 2023, the US Copyright Office [revoked copyright protection](https://www.copyright.gov/docs/zarya-of-the-dawn.pdf) for images created using the AI-powered Midjourney image generator for the comic book "Zarya of the Dawn" and issued a new copyright registration covering only the text of the work and the *arrangement* of images and text. The justification was incomplete information in the original copyright registration, which failed to disclose that the images were created by an AI model.
 
 The Copyright Office argued that the images generated by Midjourney were not the product of human authorship and thus not copyrightable. Despite the creator's claim that she had "guided" the structure and content of each image, the Copyright Office rejected the argument.
 

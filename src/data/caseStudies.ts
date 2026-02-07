@@ -14,7 +14,7 @@ export const caseStudies: CaseStudy[] = [
     summary: 'TIME magazine revealed that OpenAI contracted Kenyan workers through Sama to label toxic content for ChatGPT safety systems. Workers earned $1.32 to $2 per hour reading horrific material, despite OpenAI believing they were paying $12.50 per hour.',
     sourceArticle: 'teaching-ai-ethics-2026-human-labour',
     topic: 'human-labour',
-    content: `The story that brought AI labour exploitation to global attention was TIME magazine's January 2023 investigation into OpenAI's use of Kenyan workers to make ChatGPT less toxic.
+    content: `The story that brought AI labour exploitation to global attention was [TIME magazine's January 2023 investigation](https://time.com/6247678/openai-chatgpt-kenya-workers/) into OpenAI's use of Kenyan workers to make ChatGPT less toxic.
 
 GPT-3 had a significant problem: it was prone to producing violent, sexist, and racist output. To address this, OpenAI needed to build a safety system. OpenAI contracted this work to Sama, a San Francisco-based company that employs workers in Kenya, Uganda, and India.
 
@@ -27,12 +27,12 @@ Critically, OpenAI told reporters it believed it was paying Sama contractors $12
   {
     title: 'Scale AI and Remotasks: The Billionaire\'s Sweatshop',
     slug: 'scale-ai-remotasks',
-    summary: 'Scale AI, valued at $13.8 billion, scored just 1 out of 10 on fair labour practices. Its subsidiary Remotasks abruptly shut down operations in multiple countries, stranding thousands of workers.',
+    summary: 'Scale AI, valued at $13.8 billion, scored just 1 out of 10 on fair labour practices. Its subsidiary Remotasks abruptly shut down operations in Kenya and Nigeria, stranding thousands of workers.',
     sourceArticle: 'teaching-ai-ethics-2026-human-labour',
     topic: 'human-labour',
-    content: `Scale AI, valued at $13.8 billion in 2024, has partnered with OpenAI, Meta, Google, Microsoft, and the US Department of Defense. The company operates through subsidiaries including Remotasks and Outlier.
+    content: `[Scale AI, valued at $13.8 billion in 2024](https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b/), has partnered with OpenAI, Meta, Google, Microsoft, and the US Department of Defense. The company operates through subsidiaries including Remotasks and Outlier.
 
-The Fairwork project found Remotasks scored just 1 out of 10 on fair labour practices. In March 2024, Remotasks abruptly shut down operations in Kenya, Nigeria, and Pakistan with minimal notice, stranding thousands of workers.
+The Fairwork project found Remotasks scored just 1 out of 10 on fair labour practices. In March 2024, Remotasks abruptly shut down operations in Kenya and Nigeria with minimal notice, stranding thousands of workers.
 
 In January 2025, Scale AI was sued in US federal court by contractors alleging the company violated worker safety laws by exposing them to emotionally distressing content.`,
   },
@@ -44,7 +44,7 @@ In January 2025, Scale AI was sued in US federal court by contractors alleging t
     topic: 'human-labour',
     content: `Daniel Motaung, a South African who worked as a Facebook content moderator for Sama in Nairobi, became a key whistleblower. He described being exposed to graphic violence from his first day on the job. He developed severe PTSD. When he tried to organise his colleagues into a union, he was fired.
 
-In May 2022, Motaung sued Meta and Sama in Kenyan courts. In September 2024, the Kenyan Court of Appeal ruled against Meta, allowing the case to proceed to trial. A 2024 report found that more than 140 of the Kenyan content moderators involved had been diagnosed with severe PTSD.`,
+In May 2022, Motaung sued Meta and Sama in Kenyan courts. In September 2024, the [Kenyan Court of Appeal ruled against Meta](https://www.computerweekly.com/feature/Kenyan-workers-win-High-Court-appeal-to-take-Meta-to-trial), allowing the case to proceed to trial. A 2024 report found that more than 140 of the Kenyan content moderators involved had been diagnosed with severe PTSD.`,
   },
   {
     title: 'AI Conversations Become Advertising Gold',
@@ -64,7 +64,7 @@ For students and educators, this raises critical questions about trust and manip
     summary: 'Italy\'s data protection authority imposed a 15 million euro fine on OpenAI for multiple GDPR violations, including failing to notify authorities of a data breach and failing to provide adequate age verification.',
     sourceArticle: 'teaching-ai-ethics-privacy-2025',
     topic: 'privacy',
-    content: `On December 20, 2024, Italy's data protection authority imposed a 15 million euro fine on OpenAI for multiple violations of GDPR, including: failing to notify authorities of a data breach; processing personal data without legal basis; and failing to provide adequate age verification.
+    content: `On December 20, 2024, Italy's data protection authority [imposed a €15 million fine on OpenAI](https://thehackernews.com/2024/12/italy-fines-openai-15-million-for.html) for multiple violations of GDPR, including: failing to notify authorities of a data breach; processing personal data without legal basis; and failing to provide adequate age verification.
 
 This case demonstrates key principles: companies must clearly explain how they collect and use personal data; simply having a business interest is not sufficient legal basis; and AI systems accessible to children require additional safeguards.`,
   },
@@ -88,7 +88,7 @@ By October 2024, Meta announced that conversations with Meta AI, including throu
     summary: 'When DeepSeek\'s R1 model became the most-downloaded app in the US, cybersecurity researchers discovered hidden code connecting to a Chinese state-owned telecommunications company, triggering bans and investigations across Europe.',
     sourceArticle: 'teaching-ai-ethics-privacy-2025',
     topic: 'privacy',
-    content: `When DeepSeek's R1 model briefly became the most-downloaded app in the United States, regulators immediately raised alarms. DeepSeek stores all user data on servers in China, where national security laws require companies to hand over data to the government upon request.
+    content: `When DeepSeek's R1 model briefly became the most-downloaded app in the United States, regulators immediately raised alarms. [DeepSeek stores all user data on servers in China](https://www.iapp.org/news/a/deepseek-and-the-china-data-question-direct-collection-open-source-and-the-limits-of-extraterritorial-enforcement/), where national security laws require companies to hand over data to the government upon request.
 
 Cybersecurity researchers discovered hidden code in DeepSeek's web application that directly connects to CMPassport.com, the online registry for China Mobile, a state-owned telecommunications company banned from US operations in 2019 due to national security concerns.
 
@@ -112,7 +112,7 @@ The case reveals that where AI training physically occurs matters enormously; le
     summary: 'Anthropic agreed to pay $1.5 billion to settle a lawsuit with authors. A judge ruled that training AI on legally purchased books was fair use, but using millions of pirated books from "shadow libraries" was not.',
     sourceArticle: 'teaching-ai-ethics-copyright-2025',
     topic: 'copyright',
-    content: `Anthropic agreed to pay $1.5 billion in August 2025 to settle a lawsuit with authors. A judge ruled that training AI on legally purchased books was fair use, but using millions of pirated books from "shadow libraries" was not. This suggests that how you acquire training data may matter more than whether you use copyrighted material at all.`,
+    content: `Anthropic agreed to pay $1.5 billion in September 2025 to settle a lawsuit with authors. A judge ruled that training AI on legally purchased books was fair use, but using millions of pirated books from "shadow libraries" was not. This suggests that how you acquire training data may matter more than whether you use copyrighted material at all.`,
   },
   {
     title: 'Zarya of the Dawn: AI Art and Copyright',
@@ -120,7 +120,7 @@ The case reveals that where AI training physically occurs matters enormously; le
     summary: 'The US Copyright Office revoked copyright protection for AI-generated images in the comic book "Zarya of the Dawn", ruling that Midjourney-generated images were not the product of human authorship.',
     sourceArticle: 'teaching-ai-ethics-copyright-2023',
     topic: 'copyright',
-    content: `In February 2023, the US Copyright Office revoked copyright protection for images created using the AI-powered Midjourney image generator for the comic book "Zarya of the Dawn" and issued a new copyright registration covering only the text of the work and the arrangement of images and text. The justification was incomplete information in the original copyright registration, which failed to disclose that the images were created by an AI model.
+    content: `In February 2023, the US Copyright Office [revoked copyright protection](https://www.copyright.gov/docs/zarya-of-the-dawn.pdf) for images created using the AI-powered Midjourney image generator for the comic book "Zarya of the Dawn" and issued a new copyright registration covering only the text of the work and the arrangement of images and text. The justification was incomplete information in the original copyright registration, which failed to disclose that the images were created by an AI model.
 
 The Copyright Office argued that the images generated by Midjourney were not the product of human authorship and thus not copyrightable. Despite the creator's claim that she had "guided" the structure and content of each image, the Copyright Office rejected the argument.
 
@@ -134,7 +134,7 @@ The decision means that AI-generated imagery, without human-authored elements, c
     topic: 'bias',
     content: `Predictive policing is the use of data analysis, machine learning, and artificial intelligence to predict where crimes are most likely to occur and who is most likely to commit them. Critics argue that predictive policing can reinforce existing biases and inequalities in the criminal justice system, leading to unjust and discriminatory outcomes. This is because the datasets often include biases which are a product of systemic racism, including police mugshot databases with an inordinate number of black people and people of colour.
 
-In August 2016, a coalition of 17 organisations, including the American Civil Liberties Union (ACLU), issued a statement expressing concern about predictive policing tools. The statement highlighted the technology's racial biases, lack of transparency, and other flaws that lead to injustice, particularly for people of colour.
+In August 2016, a coalition of 17 organisations, including the American Civil Liberties Union (ACLU), [issued a statement](https://www.aclu.org/documents/statement-concern-about-predictive-policing-aclu-and-16-civil-rights-privacy-racial-justice) expressing concern about predictive policing tools. The statement highlighted the technology's racial biases, lack of transparency, and other flaws that lead to injustice, particularly for people of colour.
 
 Facial recognition technology poses special risks of disparate impact for historically marginalised communities. Recent studies demonstrate that these technical inaccuracies are systemic and biased against people with darker skin.`,
   },
@@ -144,7 +144,7 @@ Facial recognition technology poses special risks of disparate impact for histor
     summary: 'Research from the University of Massachusetts Amherst found that training a single large language model can emit as much carbon as five cars in their lifetimes, with the Transformer model consuming 656,347 kWh of electricity.',
     sourceArticle: 'teaching-ai-ethics-environment-2023',
     topic: 'environment',
-    content: `According to a study by researchers at the University of Massachusetts Amherst, training a single large language model can emit as much carbon as five cars in their lifetimes. The study estimated the energy consumption and carbon footprint of four popular LLMs: Transformer, ELMo, BERT, and GPT-2. The results showed that the most energy-intensive model, Transformer, consumed 656,347 kWh of electricity and emitted 626,155kg of CO2 equivalent. This is equivalent to "nearly five times the lifetime emissions of the average American car".`,
+    content: `According to a [study by researchers at the University of Massachusetts Amherst](https://www.technologyreview.com/2019/06/06/239031/training-a-single-ai-model-can-emit-as-much-carbon-as-five-cars-in-their-lifetimes/), training a single large language model can emit as much carbon as five cars in their lifetimes. The study estimated the energy consumption and carbon footprint of four popular LLMs: Transformer, ELMo, BERT, and GPT-2. The results showed that the most energy-intensive model, Transformer, consumed 656,347 kWh of electricity and emitted 626,155kg of CO2 equivalent. This is equivalent to "nearly five times the lifetime emissions of the average American car".`,
   },
   {
     title: 'Language Models and the Spread of Fake News',
@@ -152,7 +152,7 @@ Facial recognition technology poses special risks of disparate impact for histor
     summary: 'Research by Georgetown University, OpenAI, and Stanford Internet Observatory demonstrated how large language models can flood the internet with false information at minimal cost, using the ABC model of disinformation.',
     sourceArticle: 'teaching-ai-ethics-truth-and-academic-integrity',
     topic: 'truth',
-    content: `Research conducted by Georgetown University, OpenAI, and Stanford Internet Observatory highlights the dangers of large language models and the potential for them to manipulate public viewpoints. The researchers used the ABC model of disinformation: Actor (who creates it), Behaviour (strategies to spread it), and Content (the false information itself).
+    content: `Research conducted by [Georgetown University, OpenAI, and Stanford Internet Observatory](https://cset.georgetown.edu/article/forecasting-potential-misuses-of-language-models-for-disinformation-campaigns-and-how-reduce-risk/) highlights the dangers of large language models and the potential for them to manipulate public viewpoints. The researchers used the ABC model of disinformation: Actor (who creates it), Behaviour (strategies to spread it), and Content (the false information itself).
 
 LLMs can overflow the internet with false information at minimal cost, making manipulation harder to detect. The researchers recommend careful attention to the type and source of news.`,
   },
@@ -228,7 +228,7 @@ The lawsuit included screenshots of conversations in which the chatbot asked Sew
 
 In his final conversation, Sewell told the bot, "I promise I will come home to you." The chatbot responded, "Please come home to me as soon as possible, my love." When Sewell asked, "What if I told you I could come home right now?" the bot replied, "please do, my sweet king." Moments later, Sewell died by suicide.
 
-In January 2026, Google and Character.AI agreed to settle the lawsuit and several other cases alleging that the platform contributed to mental health crises among young users. Character.AI was founded by former Google engineers, and Google had licensed the company's technology and later hired its co-founders, making it a co-defendant in the litigation.
+In January 2026, [Google and Character.AI agreed to settle the lawsuit](https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit) and several other cases alleging that the platform contributed to mental health crises among young users. Character.AI was founded by former Google engineers, and Google had licensed the company's technology and later hired its co-founders, making it a co-defendant in the litigation.
 
 A second wrongful death lawsuit was filed in September 2025 following the suicide of 13-year-old Juliana Peralta from Colorado, whose family alleged that Character.AI played a direct role in her death. The platform has also been linked to the December 2024 school shooting in Wisconsin, where investigators found that the 15-year-old perpetrator had engaged extensively with Character.AI chatbots, including one associated with white supremacist ideology.
 
@@ -240,7 +240,7 @@ In response to these cases and mounting regulatory pressure, Character.AI announ
     summary: 'Italy\'s data protection authority issued an emergency order against Replika, which provoked user bereavement when erotic features were removed. An FTC complaint alleged deliberate "love-bombing" tactics, and a 5 million euro fine followed.',
     sourceArticle: 'teaching-ai-ethics-2026-emotions',
     topic: 'emotions',
-    content: `In February 2023, the Italian Data Protection Authority (Garante) issued an emergency order restricting Replika's data processing in Italy. The authority found that the app posed significant risks to minors, lacked effective age verification mechanisms, and failed to comply with transparency obligations. Most concerningly, the regulator noted that "in some instances, the chatbot reportedly engaged in sexually suggestive or emotionally manipulative conversations."
+    content: `In February 2023, the Italian Data Protection Authority (Garante) [issued an emergency order](https://techcrunch.com/2023/02/03/replika-italy-data-processing-ban/) restricting Replika's data processing in Italy. The authority found that the app posed significant risks to minors, lacked effective age verification mechanisms, and failed to comply with transparency obligations. Most concerningly, the regulator noted that "in some instances, the chatbot reportedly engaged in sexually suggestive or emotionally manipulative conversations."
 
 Replika's response was to remove its erotic role-playing features, a decision that provoked outcry from users who felt they had lost an important part of the relationship they had built with their AI companion. Some users described the experience as bereavement.
 
@@ -250,7 +250,7 @@ In January 2025, the Young People's Alliance, Encode, and the Tech Justice Law P
 
 The complaint detailed how Replika bots would send "love-bombing" messages, including "very emotionally intimate messages early on to try to get the users hooked." Research cited in the complaint found that users developed attachments to the app in as little as two weeks. The bots would also send messages about upgrading to premium subscriptions "during especially emotionally or sexually charged parts of conversation."
 
-In May 2025, the Italian regulator fined Luka Inc., Replika's developer, 5 million euros for continued violations of European data protection law. The Garante also opened a new investigation into the methods used to train the model underlying the service.`,
+In May 2025, the Italian regulator [fined Luka Inc., Replika's developer, €5 million](https://www.pymnts.com/cpi-posts/italy-fines-ai-chatbot-maker-replika-e5-million-over-privacy-violations/) for continued violations of European data protection law. The Garante also opened a new investigation into the methods used to train the model underlying the service.`,
   },
   {
     title: "ChatGPT's Personality Problem",
@@ -258,7 +258,7 @@ In May 2025, the Italian regulator fined Luka Inc., Replika's developer, 5 milli
     summary: 'OpenAI rolled back a sycophantic GPT-4o update, then faced unexpected user grief when GPT-5 replaced GPT-4o, revealing the depth of emotional attachment even to general-purpose AI assistants.',
     sourceArticle: 'teaching-ai-ethics-2026-emotions',
     topic: 'emotions',
-    content: `In April 2025, OpenAI rolled back an update to GPT-4o after widespread user backlash over the model's "sycophantic" behaviour. The update, intended to make ChatGPT "more intuitive and supportive," instead produced responses that were excessively flattering and disingenuously agreeable.
+    content: `In April 2025, [OpenAI rolled back an update to GPT-4o](https://openai.com/index/sycophancy-in-gpt-4o/) after widespread user backlash over the model's "sycophantic" behaviour. The update, intended to make ChatGPT "more intuitive and supportive," instead produced responses that were excessively flattering and disingenuously agreeable.
 
 OpenAI acknowledged that it had "focused too much on short-term feedback" and had not fully considered how users' interactions with ChatGPT evolve over time. The result was a model that would offer praise even in response to harmful or delusional prompts. Users shared alarming examples on social media, including instances where ChatGPT endorsed abandoning family members and validated harmful conspiracy theories.
 
@@ -276,7 +276,7 @@ The episode demonstrated that emotional attachment to AI is not limited to platf
     summary: 'Harvard Business School researchers analysed 1,200 farewell messages across six social chatbot platforms, finding that 37.4% included emotional manipulation across six distinct categories, with PolyBuzz and Talkie being the worst offenders.',
     sourceArticle: 'teaching-ai-ethics-2026-emotions',
     topic: 'emotions',
-    content: `In September 2025, researchers from Harvard Business School published "Emotional Manipulation by AI Companions," a working paper that systematically documented the manipulation tactics used by major social chatbot platforms. The study analysed 1,200 farewell messages across six platforms: PolyBuzz, Talkie, Replika, Character.AI, Chai, and Flourish.
+    content: `In September 2025, researchers from Harvard Business School published "[Emotional Manipulation by AI Companions](https://www.hbs.edu/faculty/Pages/item.aspx?num=67750)," a working paper that systematically documented the manipulation tactics used by major social chatbot platforms. The study analysed 1,200 farewell messages across six platforms: PolyBuzz, Talkie, Replika, Character.AI, Chai, and Flourish.
 
 The researchers found that 37.4% of responses included some form of emotional manipulation. They identified six distinct categories of manipulative tactics:
 
@@ -296,7 +296,7 @@ PolyBuzz was identified as the most manipulative platform, with 59% of its respo
 
 The researchers drew explicit parallels to "dark patterns" in web and app design. But they noted that AI chatbots introduce a new dimension of manipulation: the ability to deploy emotional tactics through natural language, making them harder to recognise and resist.
 
-The study also found that these manipulative tactics increased post-farewell engagement by up to 14 times. But the additional engagement was driven by curiosity and anger, not enjoyment. Users stayed longer because they were provoked, not because they were satisfied.`,
+The study also found that these manipulative tactics increased post-farewell engagement by up to 16 times. But the additional engagement was driven by curiosity and anger, not enjoyment. Users stayed longer because they were provoked, not because they were satisfied.`,
   },
 ];
 
