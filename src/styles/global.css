@@ -28,7 +28,7 @@
   --bg-elevated: #121a1a;
   --bg-card: #162020;
   --text: #f0f0f0;
-  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-muted: rgba(255, 255, 255, 0.65);
   --accent: #2dd4a8;
   --accent-hover: #5eead4;
   --accent-glow: rgba(45, 212, 168, 0.15);
@@ -63,12 +63,12 @@
   --bg-elevated: #ffffff;
   --bg-card: #ffffff;
   --text: #1a1a2e;
-  --text-muted: rgba(26, 26, 46, 0.6);
-  --accent: #0fa17e;
-  --accent-hover: #0d8a6c;
-  --accent-glow: rgba(15, 161, 126, 0.1);
-  --accent-warm: #d97706;
-  --accent-warm-hover: #b45309;
+  --text-muted: rgba(26, 26, 46, 0.75);
+  --accent: #0d7d62;
+  --accent-hover: #096b53;
+  --accent-glow: rgba(13, 125, 98, 0.1);
+  --accent-warm: #92400e;
+  --accent-warm-hover: #78350f;
 
   --border-subtle: rgba(0, 0, 0, 0.06);
   --border-light: rgba(0, 0, 0, 0.1);
